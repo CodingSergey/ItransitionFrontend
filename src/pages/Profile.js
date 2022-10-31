@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Container, Table, TableContainer, TableHead, TableRow, TableCell, TableBody } from "@mui/material";
 import TopBar from "../components/TopBar";
-import { ThemeProvider } from "@mui/material";
+import { ThemeProvider,Button } from "@mui/material";
 import {theme} from "../styles/Theme";
 export default function Profile() {
     const [collections, setCollections] = useState([]);
@@ -41,6 +41,8 @@ export default function Profile() {
                                     <TableCell>{collection.name}</TableCell>
                                     <TableCell>{collections.items ? collection.items : 0}</TableCell>
                                     <TableCell>{collection.topic}</TableCell>
+                                    <TableCell><Button>Edit</Button></TableCell>
+                                    <TableCell><Button>Add Item</Button></TableCell>
                                 </TableRow>
                             )
                         })}
