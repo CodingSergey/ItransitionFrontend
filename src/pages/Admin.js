@@ -1,5 +1,6 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, ThemeProvider } from "@mui/material";
 import { useEffect, useState } from "react";
+import TopBar from "../components/TopBar";
 import {theme} from "../styles/Theme";
 export default function Admin() {
     const [users,setUsers] = useState([]);
@@ -22,6 +23,7 @@ export default function Admin() {
     });
     return (
         <ThemeProvider theme={theme}>
+            <TopBar/>
             <TableContainer>
                 <Table>
                     <TableHead>
