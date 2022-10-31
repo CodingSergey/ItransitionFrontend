@@ -19,6 +19,7 @@ export default function Admin() {
     }
     const deleteUser= (id) => {
         console.log(id);
+        window.location.href="/"
     }
     const blockUser = (id) => {
         console.log(id);
