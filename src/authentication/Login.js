@@ -26,10 +26,9 @@ export default function Login() {
         });
         const res = await response.json();
         if (res.token) {
-            let username = jwt_decode(res.token).username;
             let admin = jwt_decode(res.token).admin;
             localStorage.setItem("token", res.token);
-            localStorage.setItem("username", username);
+            localStorage.setItem("username", email);
             localStorage.setItem("admin", admin);
             setBad(false);
             window.location.href = "/";
