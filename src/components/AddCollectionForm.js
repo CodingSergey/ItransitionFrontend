@@ -17,7 +17,10 @@ export default function AddCollectionForm() {
     const [exists, setExists] = useState();
     const onSubmit = async  (info) => {
         const { name, description, topic } = info;
-        console.log(localStorage.getItem("token"));
+        console.log(name);
+        console.log(description);
+        console.log(topic);
+        console.log(localStorage.getItem("username"));
         const response = await fetch("https://vast-garden-06972.herokuapp.com/collection/addcollection", {
             method: "POST",
             mode: "cors",
