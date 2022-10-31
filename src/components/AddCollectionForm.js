@@ -1,4 +1,4 @@
-import { Container, ThemeProvider, TextField, Button, Select, MenuItem, Box } from "@mui/material";
+import { Container, ThemeProvider, TextField, Button, Select, MenuItem, Box, Typography } from "@mui/material";
 import { useForm, Controller } from "react-hook-form";
 import { theme } from "../styles/Theme";
 import { yupResolver } from "@hookform/resolvers/yup"
@@ -52,6 +52,10 @@ export default function AddCollectionForm() {
     return (
         <ThemeProvider theme={theme}>
             <Container justifycontent="center">
+                <br/>
+                <br/>
+                <Typography variant ="error">{exists&& "This collection already exists"}</Typography>
+                
                 <br />
                 <br />
                 <form onSubmit={handleSubmit(onSubmit)}>
