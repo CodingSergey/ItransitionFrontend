@@ -15,6 +15,8 @@ const schema = yup.object().shape({
 export default function AddCollectionForm() {
     const { register, control, handleSubmit, watch, formState: { errors } } = useForm({ resolver: yupResolver(schema) });
     const [exists, setExists] = useState();
+    const [topic, setTopic] = useState('');
+
     const onSubmit = async  (info) => {
         const { name, description, topic } = info;
         console.log(name);
@@ -38,7 +40,6 @@ export default function AddCollectionForm() {
            window.location.href="/profile"
         }
     }
-    const [topic, setTopic] = useState('');
 
     const handleChange = (event) => {
         setTopic(event.target.value);
