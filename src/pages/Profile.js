@@ -39,7 +39,7 @@ export default function Profile() {
                             return(
                                 <TableRow>
                                     <TableCell>{collection.name}</TableCell>
-                                    <TableCell>{collections.items}</TableCell>
+                                    <TableCell>{collections.items ? collection.items : 0}</TableCell>
                                     <TableCell>{collection.topic}</TableCell>
                                 </TableRow>
                             )
