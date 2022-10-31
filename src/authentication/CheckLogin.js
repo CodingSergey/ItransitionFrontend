@@ -7,6 +7,6 @@ export default async function CheckLogin() {
         },
         body: JSON.stringify({token: localStorage.getItem("token")})
     });
-    const res= await response.json();
+    const res = await response.json();
     return res.auth;
 }

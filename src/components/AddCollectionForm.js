@@ -32,7 +32,7 @@ export default function AddCollectionForm() {
         })
         const res = await response.json();
         console.log(res);
-        if(res === "exists" ) {
+        if(res.exists === true) {
             setExists(true);
         } else {
            
