@@ -20,6 +20,7 @@ export default function Admin() {
     }
     const toggleCheckboxValue = (index) => {
         setIsChecked(isChecked.map((v, i) => (i === index ? !v : v)));
+        console.log(index);
     }
     useEffect(()=>{
         fetchUsers();
@@ -41,7 +42,7 @@ export default function Admin() {
                         {users.map(user=> {
                             return(
                                 <TableRow>
-                                    <TableCell><CheckBox key={user._id} checked={isChecked[user._id]} onClick={()=> toggleCheckboxValue(user.id)}></CheckBox></TableCell>
+                                    <TableCell><CheckBox key={user._id} checked={isChecked[user._id]} onClick={()=>{console.log(user._id); toggleCheckboxValue(user._id)}}></CheckBox></TableCell>
                                     <TableCell>{user.username}</TableCell>
                                     <TableCell>{user.email}</TableCell>
                                     <TableCell>{user.admin ? "Yes" : "No"}</TableCell>
