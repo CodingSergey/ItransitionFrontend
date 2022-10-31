@@ -23,7 +23,11 @@ export default function Admin() {
     }
     useEffect(()=>{
         fetchUsers();
-        users.map(user=>isChecked[user._id] = false);
+        users.map(user=>{
+            const newChecked = Object.assign({}, isChecked);
+            newChecked[user._id] = false;
+            setIsChecked(newChecked);
+        });
     });
     return (
         <ThemeProvider theme={theme}>
