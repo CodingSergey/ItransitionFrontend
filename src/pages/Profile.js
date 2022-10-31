@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, Typography } from "@mui/material";
+import { Container, Table, TableContainer, TableHead, TableRow, TableCell } from "@mui/material";
 import TopBar from "../components/TopBar";
 import { ThemeProvider } from "@mui/material";
 import {theme} from "../styles/Theme";
@@ -25,14 +25,17 @@ export default function Profile() {
         <ThemeProvider theme={theme}>
         <Container justifycontent="center">
             <TopBar/>
-            {collections.map(collection => {
-                return(<div>
-                   <Typography>{collection.name}</Typography>
-                   <Typography>{collection.description}</Typography>
-                   <Typography>{collection.topic}</Typography>
-                   <Typography>{collection.date}</Typography>
-                </div>)
-            })}
+            <TableContainer>
+                <Table>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Collection name</TableCell>
+                            <TableCell>Number of items</TableCell>
+                            <TableCell>Topic</TableCell>
+                        </TableRow>
+                    </TableHead>
+                </Table>
+            </TableContainer>
         </Container>
         </ThemeProvider>
     )
