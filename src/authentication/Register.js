@@ -26,7 +26,7 @@ export default function Register() {
                 },
                 body: JSON.stringify({ "_email": email })
             }).then(response => response.json()).then(data => setData(data));
-        if (data == "exists") { 
+        if (data === "exists") { 
             return;
          } else {
             fetch("https://vast-garden-06972.herokuapp.com/auth/register", {
