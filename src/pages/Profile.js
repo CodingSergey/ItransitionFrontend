@@ -15,7 +15,7 @@ export default function Profile() {
             },
             body: JSON.stringify({_author: localStorage.getItem("username")})
         })
-        const res = response.json();
+        const res = await response.json();
         console.log(res);
         setCollections(res);
     }
