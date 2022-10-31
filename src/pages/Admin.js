@@ -1,5 +1,5 @@
 import { CheckBox } from "@mui/icons-material";
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, ThemeProvider } from "@mui/material";
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, ThemeProvider,Button } from "@mui/material";
 import { useEffect, useState } from "react";
 import TopBar from "../components/TopBar";
 import {theme} from "../styles/Theme";
@@ -16,6 +16,12 @@ export default function Admin() {
         });
         const res = await response.json();
         setUsers(res);
+    }
+    const deleteUser= (id) => {
+        console.log(id);
+    }
+    const blockUser = (id) => {
+        console.log(id);
     }
     useEffect(()=>{
         fetchUsers();
@@ -39,7 +45,8 @@ export default function Admin() {
                         {users.map(user=> {
                             return(
                                 <TableRow>
-                                    <TableCell><CheckBox checked={false}></CheckBox></TableCell>
+                                    <TableCell><Button onClick={blockUser(user._id)}>Toggle Block</Button></TableCell>
+                                    <TableCell><Button onClick={deleteUser(user._id)}> Delete</Button></TableCell>
                                     <TableCell>{user.username}</TableCell>
                                     <TableCell>{user.email}</TableCell>
                                     <TableCell>{user.admin ? "Yes" : "No"}</TableCell>
