@@ -28,7 +28,7 @@ export default function AddCollectionForm() {
                 "Content-Type": "application/json",
                 "authorization": localStorage.getItem("token")
             },
-            body: JSON.stringify({_name: name, _description: description, _topic: topic, author: localStorage.getItem("username")})
+            body: JSON.stringify({_name: name, _description: description, _topic: topic, _author: localStorage.getItem("username")})
         })
         const res = await response.json();
         console.log(res);
