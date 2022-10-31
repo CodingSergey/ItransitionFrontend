@@ -23,6 +23,7 @@ export default function Admin() {
     }
     useEffect(()=>{
         fetchUsers();
+        users.map(user=>isChecked[user._id] = false);
     });
     return (
         <ThemeProvider theme={theme}>
