@@ -5,6 +5,7 @@ import Register from "./authentication/Register"
 import AddCollection from "./pages/AddCollection";
 import { ThemeProvider } from "@emotion/react";
 import { createTheme } from "@mui/system";
+import Profile from "./pages/Profile";
 const theme= createTheme({
   mode:"light"
 })
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/login" element={<Login/>} />
         <Route exact path="/register" element={<Register/>} />
         <Route exact path="/addCollection" element={<AddCollection/>}/>
+        <Route exact path="/profile" element={<Profile/>}/>
       </Routes>
     </BrowserRouter>
     </ThemeProvider>

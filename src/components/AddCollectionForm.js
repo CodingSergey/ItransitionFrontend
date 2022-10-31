@@ -35,7 +35,7 @@ export default function AddCollectionForm() {
         if(res.exists === true) {
             setExists(true);
         } else {
-           
+           window.location.href="/profile"
         }
     }
     const [topic, setTopic] = useState('');
