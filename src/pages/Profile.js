@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Container } from "@mui/material";
 import TopBar from "../components/TopBar";
+import { ThemeProvider } from "@mui/material";
+import {theme} from "../styles/Theme";
 export default function Profile() {
     const [collections, setCollections] = useState();
     const fetchCollections = async () => {
@@ -18,12 +20,14 @@ export default function Profile() {
         setCollections(res);
     }
     useEffect(()=>{
-        
+        fetchCollections();
     }); 
     return(
+        <ThemeProvider theme={theme}>
         <Container justifycontent="center">
             <TopBar/>
             
         </Container>
+        </ThemeProvider>
     )
 }
