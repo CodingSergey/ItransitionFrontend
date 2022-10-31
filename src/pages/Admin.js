@@ -28,7 +28,7 @@ export default function Admin() {
             newChecked[user._id] = false;
             setIsChecked(newChecked);
         });
-    });
+    }, []);
     return (
         <ThemeProvider theme={theme}>
             <TopBar/>
