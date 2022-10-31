@@ -18,8 +18,7 @@ export default function Admin() {
         setUsers(res);
     }
     const deleteUser= (id) => {
-        console.log(id);
-        window.location.href="/"
+        
     }
     const blockUser = (id) => {
         console.log(id);
@@ -34,8 +33,8 @@ export default function Admin() {
                 <Table>
                     <TableHead>
                         <TableRow>
-
-                            <TableCell>Select</TableCell>
+                            <TableCell>Toggle Block</TableCell>
+                            <TableCell>Delete User</TableCell>
                             <TableCell>Username</TableCell>
                             <TableCell>Email</TableCell>
                             <TableCell>Admin</TableCell>
