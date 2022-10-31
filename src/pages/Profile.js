@@ -6,7 +6,7 @@ import {theme} from "../styles/Theme";
 export default function Profile() {
     const [collections, setCollections] = useState();
     const fetchCollections = async () => {
-        const response = await fetch("https://vast-garden-06972.herokuapp.com/collection/addcollection", {
+        const response = await fetch("https://vast-garden-06972.herokuapp.com/collection/usercollections", {
             method: "POST",
             mode: "cors",
             headers: {
