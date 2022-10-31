@@ -5,7 +5,7 @@ import TopBar from "../components/TopBar";
 import {theme} from "../styles/Theme";
 export default function Admin() {
     const [users,setUsers] = useState([]);
-    const [isChecked, setIsChecked] = useState({});
+    const [isChecked, setIsChecked] = useState([]);
     const fetchUsers = async () => {
         const response  = await fetch("https://vast-garden-06972.herokuapp.com/users/allUsers", {
             method: "GET",
