@@ -21,7 +21,7 @@ function App() {
         <Route exact path="/register" element={<Register/>} />
         <Route exact path="/addCollection" element={<AddCollection/>}/>
         <Route exact path="/profile" element={<Profile/>}/>
-        <Route exact path="/admin" element={<Admin/>}/>
+        <Route exact path="/manager" element={<Admin/>}/>
       </Routes>
     </BrowserRouter>
     </ThemeProvider>
