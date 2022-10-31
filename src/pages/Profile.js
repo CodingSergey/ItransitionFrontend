@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, Table, TableContainer, TableHead, TableRow, TableCell } from "@mui/material";
+import { Container, Table, TableContainer, TableHead, TableRow, TableCell, TableBody } from "@mui/material";
 import TopBar from "../components/TopBar";
 import { ThemeProvider } from "@mui/material";
 import {theme} from "../styles/Theme";
@@ -34,6 +34,17 @@ export default function Profile() {
                             <TableCell>Topic</TableCell>
                         </TableRow>
                     </TableHead>
+                    <TableBody>
+                        {collections.map(collection=>{
+                            return(
+                                <TableRow>
+                                    <TableCell>{collection.name}</TableCell>
+                                    <TableCell>{collections.items}</TableCell>
+                                    <TableCell>{collection.topic}</TableCell>
+                                </TableRow>
+                            )
+                        })}
+                    </TableBody>
                 </Table>
             </TableContainer>
         </Container>
