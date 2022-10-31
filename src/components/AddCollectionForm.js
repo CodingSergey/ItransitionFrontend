@@ -54,7 +54,7 @@ export default function AddCollectionForm() {
             <Container justifycontent="center">
                 <br/>
                 <br/>
-                <Typography variant ="error">{exists&& "This collection already exists"}</Typography>
+                <Typography color="red">{exists&& "This collection already exists"}</Typography>
                 
                 <br />
                 <br />
