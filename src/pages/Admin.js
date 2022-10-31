@@ -40,8 +40,8 @@ export default function Admin() {
                                 <TableRow>
                                     <TableCell>{user.username}</TableCell>
                                     <TableCell>{user.email}</TableCell>
-                                    <TableCell>{user.admin}</TableCell>
-                                    <TableCell>{user.blocked}</TableCell>
+                                    <TableCell>{user.admin ? "Yes" : "No"}</TableCell>
+                                    <TableCell>{user.blocked ? "Yes" : "No"}</TableCell>
                                 </TableRow>
                             )
                         })}
