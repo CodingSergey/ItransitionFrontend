@@ -49,7 +49,7 @@ export default function TopBar() {
                         <MenuItem onClick={()=>window.location.href="/profile"}>Profile</MenuItem>
                         <MenuItem onClick={Logout}>Logout</MenuItem>
                         <MenuItem onClick={()=>window.location.href="/addCollection"}>Add Collection</MenuItem>
-                        {localStorage.getItem("admin") === true && <MenuItem onClick={()=>window.location.href="/manager"}>User Management</MenuItem>}
+                        {localStorage.getItem("admin") && <MenuItem onClick={()=>window.location.href="/manager"}>User Management</MenuItem>}
                     </div>
                     :
                     <div>
