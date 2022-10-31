@@ -31,6 +31,8 @@ export default function Admin() {
                 <Table>
                     <TableHead>
                         <TableRow>
+
+                            <TableCell>Select</TableCell>
                             <TableCell>Username</TableCell>
                             <TableCell>Email</TableCell>
                             <TableCell>Admin</TableCell>
