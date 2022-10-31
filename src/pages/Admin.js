@@ -39,7 +39,7 @@ export default function Admin() {
                         {users.map(user=> {
                             return(
                                 <TableRow>
-                                    <TableCell><CheckBox></CheckBox></TableCell>
+                                    <TableCell><CheckBox checked={false}></CheckBox></TableCell>
                                     <TableCell>{user.username}</TableCell>
                                     <TableCell>{user.email}</TableCell>
                                     <TableCell>{user.admin ? "Yes" : "No"}</TableCell>
