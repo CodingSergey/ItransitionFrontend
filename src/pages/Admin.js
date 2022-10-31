@@ -5,7 +5,6 @@ import TopBar from "../components/TopBar";
 import {theme} from "../styles/Theme";
 export default function Admin() {
     const [users,setUsers] = useState([]);
-    const [isChecked, setIsChecked] = useState({});
     const fetchUsers = async () => {
         const response  = await fetch("https://vast-garden-06972.herokuapp.com/users/allUsers", {
             method: "GET",
@@ -18,16 +17,8 @@ export default function Admin() {
         const res = await response.json();
         setUsers(res);
     }
-    const toggleCheckboxValue = (index) => {
-        isChecked[index] = !isChecked[index];
-    }
     useEffect(()=>{
         fetchUsers();
-        users.map(user=>{
-            const newChecked = Object.assign({}, isChecked);
-            newChecked[user._id] = false;
-            setIsChecked(newChecked);
-        });
     }, []);
     return (
         <ThemeProvider theme={theme}>
@@ -48,7 +39,7 @@ export default function Admin() {
                         {users.map(user=> {
                             return(
                                 <TableRow>
-                                    <TableCell><CheckBox key={user._id} checked={isChecked[user._id]} onClick={()=>{ toggleCheckboxValue(user._id)}}></CheckBox></TableCell>
+                                    <TableCell><CheckBox></CheckBox></TableCell>
                                     <TableCell>{user.username}</TableCell>
                                     <TableCell>{user.email}</TableCell>
                                     <TableCell>{user.admin ? "Yes" : "No"}</TableCell>
