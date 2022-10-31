@@ -26,12 +26,12 @@ export default function Profile() {
         <Container justifycontent="center">
             <TopBar/>
             {collections.map(collection => {
-                <div>
+                return(<div>
                    <Typography>{collection.name}</Typography>
                    <Typography>{collection.description}</Typography>
                    <Typography>{collection.topic}</Typography>
                    <Typography>{collection.date}</Typography>
-                </div>
+                </div>)
             })}
         </Container>
         </ThemeProvider>
