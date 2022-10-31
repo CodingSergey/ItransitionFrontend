@@ -45,8 +45,8 @@ export default function Admin() {
                         {users.map(user=> {
                             return(
                                 <TableRow>
-                                    <TableCell><Button variant="outlined" onClick={blockUser(user._id)}>Toggle Block</Button></TableCell>
-                                    <TableCell><Button variant="outlined" onClick={deleteUser(user._id)}> Delete</Button></TableCell>
+                                    <TableCell><Button variant="outlined" onClick={()=>blockUser(user._id)}>Toggle Block</Button></TableCell>
+                                    <TableCell><Button variant="outlined" onClick={()=>deleteUser(user._id)}> Delete</Button></TableCell>
                                     <TableCell>{user.username}</TableCell>
                                     <TableCell>{user.email}</TableCell>
                                     <TableCell>{user.admin ? "Yes" : "No"}</TableCell>
