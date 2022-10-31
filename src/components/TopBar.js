@@ -1,8 +1,8 @@
-import styled from "@emotion/styled";
+import {styled} from "@mui/material/styles";
 import { AppBar, InputBase, Toolbar, Typography, Menu, MenuItem } from "@mui/material";
 import { AccountBox } from "@mui/icons-material"
 import { useState } from "react";
-
+import Logout from "../authentication/Logout";
 const ToolBar = styled(Toolbar)({
     display: "flex",
     justifyContent: "space-between",
@@ -16,7 +16,8 @@ const Search = styled("div")(({ theme }) => ({
 }));
 const Icons = styled("div")();
 export default function TopBar() {
-    const user =sessionStorage.getItem("user");
+    const token =localStorage.getItem("token");
+    const username = localStorage.getItem("username");
     const [open, setOpen] = useState(false);
     return (
         <AppBar position="sticky">
@@ -25,6 +26,7 @@ export default function TopBar() {
                 <Search>
                     <InputBase placeholder="Search collections" />
                 </Search>
+                <Typography>{username && "Hello " + username}</Typography>
                 <Icons>
                     <AccountBox onClick={(e) => setOpen(true)} />
                 </Icons>
@@ -42,11 +44,12 @@ export default function TopBar() {
                         horizontal: "right",
                     }}
                 >   
-                {user ?
+                {username ?
                     <div>
                         <MenuItem>Profile</MenuItem>
-                        <MenuItem>Your Collections</MenuItem>
-                        <MenuItem>Logout</MenuItem>
+                        <MenuItem onClick={Logout}>Logout</MenuItem>
+                        <MenuItem onClick={()=>window.location.href="/addCollection"}>Add Collection</MenuItem>
+                        {localStorage.getItem("admin") && <MenuItem>User Management</MenuItem>}
                     </div>
                     :
                     <div>
