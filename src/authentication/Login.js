@@ -16,7 +16,7 @@ export default function Login() {
     const [bad, setBad] = useState(false);
     const onSubmit = async (info) => {
         const { email, password } = info;
-        const response = await fetch("http://vast-garden-06972.herokuapp.com/auth/login", {
+        const response = await fetch("https://vast-garden-06972.herokuapp.com/auth/login", {
             method: "POST",
             mode: "cors",
             headers: {

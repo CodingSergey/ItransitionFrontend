@@ -17,7 +17,7 @@ export default function Register() {
     const { register, control, handleSubmit, watch, formState: { errors } } = useForm({ resolver: yupResolver(schema) });
     const onSubmit = (info) => {
         const {username,email,password } = info;
-        fetch("http://vast-garden-06972.herokuapp.com/auth/exists",
+        fetch("https://vast-garden-06972.herokuapp.com/auth/exists",
             {
                 method: "POST",
                 mode: "cors",
@@ -29,7 +29,7 @@ export default function Register() {
         if (data == "exists") { 
             return;
          } else {
-            fetch("http://vast-garden-06972.herokuapp.com/auth/register", {
+            fetch("https://vast-garden-06972.herokuapp.com/auth/register", {
                 method:"POST",
                 mode: "cors",
                 headers: {
