@@ -1,3 +1,4 @@
+import { CheckBox } from "@mui/icons-material";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, ThemeProvider } from "@mui/material";
 import { useEffect, useState } from "react";
 import TopBar from "../components/TopBar";
@@ -38,6 +39,7 @@ export default function Admin() {
                         {users.map(user=> {
                             return(
                                 <TableRow>
+                                    <TableCell><CheckBox></CheckBox></TableCell>
                                     <TableCell>{user.username}</TableCell>
                                     <TableCell>{user.email}</TableCell>
                                     <TableCell>{user.admin ? "Yes" : "No"}</TableCell>
