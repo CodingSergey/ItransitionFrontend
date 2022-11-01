@@ -18,10 +18,21 @@ export default function Admin() {
         setUsers(res);
     }
     const deleteUser= (id) => {
-        
+        fetch("https://vast-garden-06972.herokuapp.com/users/deleteuser?id=" + id, {
+            method:"GET",
+            mode: "cors",
+            headers: {
+                "Content-Type": "application/json",
+                "authorization": localStorage.getItem("token")
+            }
+        })
+        window.location.reload();
     }
     const blockUser = (id) => {
-        console.log(id);
+        
+    }
+    const adminUser = (id) => {
+
     }
     useEffect(()=>{
         fetchUsers();
@@ -33,6 +44,7 @@ export default function Admin() {
                 <Table>
                     <TableHead>
                         <TableRow>
+                            <TableCell>Toggle Admin</TableCell>
                             <TableCell>Toggle Block</TableCell>
                             <TableCell>Delete User</TableCell>
                             <TableCell>Username</TableCell>
@@ -45,6 +57,7 @@ export default function Admin() {
                         {users.map(user=> {
                             return(
                                 <TableRow>
+                                    <TableCell><Button variant="outlined" onClick={()=>adminUser(user._id)}>Toggle Admin</Button></TableCell>
                                     <TableCell><Button variant="outlined" onClick={()=>blockUser(user._id)}>Toggle Block</Button></TableCell>
                                     <TableCell><Button variant="outlined" onClick={()=>deleteUser(user._id)}> Delete</Button></TableCell>
                                     <TableCell>{user.username}</TableCell>
