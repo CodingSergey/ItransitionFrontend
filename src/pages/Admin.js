@@ -19,7 +19,7 @@ export default function Admin() {
     }
     const deleteUser= (id) => {
         fetch("https://vast-garden-06972.herokuapp.com/users/deleteuser?id=" + id, {
-            method:"GET",
+            method:"DELETE",
             mode: "cors",
             headers: {
                 "Content-Type": "application/json",
