@@ -1,6 +1,7 @@
 import { CheckBox } from "@mui/icons-material";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, ThemeProvider,Button } from "@mui/material";
 import { useEffect, useState } from "react";
+import CheckLogin from "../authentication/CheckLogin";
 import TopBar from "../components/TopBar";
 import {theme} from "../styles/Theme";
 export default function Admin() {
@@ -40,9 +41,18 @@ export default function Admin() {
         window.location.reload(false);
     }
     const adminUser = (id) => {
-
+        fetch("https://vast-gatrden-06972.herokuapp.com/users/toggleadmin/" + id, {
+            method:"PUT",
+            mode: "cors",
+            headers:{
+                "Content-Type": "application/json",
+                "authorization" : localStorage.getItem("token")
+            }
+        })
+        window.location.reload(false);
     }
     useEffect(()=>{
+        CheckLogin();
         fetchUsers();
     }, []);
     return (

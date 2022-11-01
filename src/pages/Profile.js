@@ -3,6 +3,7 @@ import { Container, Table, TableContainer, TableHead, TableRow, TableCell, Table
 import TopBar from "../components/TopBar";
 import { ThemeProvider,Button } from "@mui/material";
 import {theme} from "../styles/Theme";
+import CheckLogin from "../authentication/CheckLogin";
 export default function Profile() {
     const [collections, setCollections] = useState([]);
     const fetchCollections = async () => {
@@ -19,6 +20,7 @@ export default function Profile() {
         setCollections(res);
     }
     useEffect(()=>{
+        CheckLogin();
         fetchCollections();
     }); 
     return(
