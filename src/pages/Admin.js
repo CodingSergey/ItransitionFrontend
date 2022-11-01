@@ -53,7 +53,6 @@ export default function Admin() {
         window.location.reload(false);
     }
     useEffect(()=>{
-        CheckAdmin();
         CheckLogin();
         fetchUsers();
     }, []);
