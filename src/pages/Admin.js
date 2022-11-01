@@ -2,6 +2,7 @@ import { CheckBox } from "@mui/icons-material";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, ThemeProvider,Button } from "@mui/material";
 import { useEffect, useState } from "react";
 import CheckLogin from "../authentication/CheckLogin";
+import CheckAdmin from "../authentication/CheckAdmin";
 import TopBar from "../components/TopBar";
 import {theme} from "../styles/Theme";
 export default function Admin() {
@@ -52,6 +53,7 @@ export default function Admin() {
         window.location.reload(false);
     }
     useEffect(()=>{
+        CheckAdmin();
         CheckLogin();
         fetchUsers();
     }, []);
