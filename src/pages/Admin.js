@@ -29,7 +29,15 @@ export default function Admin() {
         window.location.reload(false);        
     }
     const blockUser = (id) => {
-        
+        fetch("https://vast-garden-06972.herokuapp.com/users/toggleblock/" + id, {
+            method: "PUT",
+            mode: "cors",
+            headers:{
+                "Content-Type": "application/json",
+                "authorization": localStorage.getItem("token")
+            }
+        })
+        window.location.reload(false);
     }
     const adminUser = (id) => {
 
