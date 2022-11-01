@@ -28,7 +28,7 @@ export default function Admin() {
                 "authorization": localStorage.getItem("token")
             }
         })
-        window.location.reload(false);        
+        fetchUsers();        
     }
     const blockUser = (id) => {
         fetch("https://vast-garden-06972.herokuapp.com/users/toggleblock/" + id, {
@@ -39,7 +39,7 @@ export default function Admin() {
                 "authorization": localStorage.getItem("token")
             }
         })
-        window.location.reload(false);
+        fetchUsers();
     }
     const adminUser = (id) => {
         fetch("https://vast-gatrden-06972.herokuapp.com/users/toggleadmin/" + id, {
@@ -50,7 +50,7 @@ export default function Admin() {
                 "authorization" : localStorage.getItem("token")
             }
         })
-        window.location.reload(false);
+        fetchUsers();
     }
     useEffect(()=>{
         CheckLogin();
