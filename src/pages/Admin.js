@@ -26,7 +26,7 @@ export default function Admin() {
                 "authorization": localStorage.getItem("token")
             }
         })
-        
+        window.location.reload(false);        
     }
     const blockUser = (id) => {
         
